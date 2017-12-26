@@ -25,14 +25,18 @@ Among the additional packages are
 - *xz-utils*
 
 ______
-### Documentation
-Documentation for this docker image is provided by the original *nimmis/docker-ubuntu* docker image documentation at  
+### Creating a container
 
-  https://github.com/nimmis/docker-ubuntu
+    docker run -it \
+               -e DISPLAY=unix${DISPLAY} \
+               -v /tmp/.X11-unix:/tmp/.X11-unix \
+               -v /tmp/.docker.xauth:/tmp/.docker.xauth \
+               -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
+               -v /etc/localtime:/etc/localtime:ro \
+               --name=gui \
+               --rm \
+           debian-base-gui:9.2 /bin/bash  
 
-When following the narrative, replace *nimmis/docker-ubuntu* with *EarthWalkSoftware/debian:9.2*, and *ubuntu* with *debian*.  The provided functions and utilities are identical to the original image, except that they are being run under *Debian 9.2*.
-
-______
 ### locale
 The following locale is automatically created in the image:
 
