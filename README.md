@@ -67,11 +67,6 @@ Maps the  docker container's .Xauthority file to the docker host's .Xauthority f
 
     -v ${HOME}/.Xauthority:${HOME}/.Xauthority  
 
-- *localtime*  
-(OPTIONAL) Maps the docker container localtime file to the docker host's localtime file.  Normally set to 
-
-    -v /etc/localtime:/etc/localtime:ro
-
 ______
 ### locale
 The following locale is automatically created in the image:
