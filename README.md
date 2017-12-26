@@ -26,7 +26,7 @@ Among the additional packages are
 
 ______
 ### Creating a container
-The following command will create a docker container named "*gui*" and start a console version of *bash*:
+The following command will create a docker container named *gui* and start a console version of *bash*:
 
     docker run -it \
                -e DISPLAY=unix${DISPLAY} \
@@ -68,17 +68,33 @@ Maps the  docker container's .Xauthority file to the docker host's .Xauthority f
     -v ${HOME}/.Xauthority:${HOME}/.Xauthority  
 
 ______
+## Simple tests
+
+### Test 1
+Copy the docker command above (*Creating a container*) and paste it into a docker host command line to create a temporary docker named *gui*.  At the *bash* prompt (#), enter the following command:
+
+    apt install mousepad
+    /usr/bin/mousepad
+
+A graphical dialog should appear containing the *mousepad* editor main window.  Exit the *mousepad* program, then exit the container (*exit* 2 times).
+
+### Test 2
+Add a new volume to the command above, mapping a local folder container text documents (e.g. *$HOME/Documents*) to an arbitrary folder in the container (e.g. - */documents*):
+
+    -v ${HOME}/Documents:/documents
+
+Perform the steps in *Test 1* to open the mousepad application.  Using the mousepad file manager, browse to the new folder (*/documents*) and open a text document there.
+
+______
 ### locale
 The following locale is automatically created in the image:
 
     locale-gen en_US
     update-locale LANG=C.UTF-8 LC_MESSAGES=POSIX  
   
-This setting may be changed in the Dockerfile (using the RUN command) when building a new container from the *EarthWalkSoftware/debian-base* image, 
+This setting may be changed in the Dockerfile (using the RUN command) when building a new container from the *EarthWalkSoftware/debian-base-gui* image, 
 
 ------
 ### Licensed by Academic Free License v 3.0
 
 Read the license at https://github.com/EarthWalkSoftware/docker-alpine-htop/wiki/License
-
-Any conflict between the terms of the *Academic Free License v 3.0* and the terms of any license provided by *nimmis/docker-ubuntu*, the terms of the *nimmis/docker-ubuntu* license shall prevail.
