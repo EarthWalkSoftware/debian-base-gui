@@ -1,4 +1,4 @@
-# debian-base-gui
+## debian-base-gui
 *EarthWalkSoftware/debian-base-gui* builds upon *EarthWalkSoftware/debian-base* to include basic video/gui packages and framework setup.  
 
 A docker image of *EarthWalkSoftware/debian-base-gui* is available from *EarthWalkSoftware* at *Docker Hub*:
@@ -25,7 +25,34 @@ Among the additional packages are
 - *xz-utils*
 
 ______
+### Docker RUN options
+
+#### Environment variables
+
+- *DISPLAY* - Used to set the system display to use. Normally, set to
+    -e DISPLAY=unix${DISPLAY}
+
+#### Volumes
+
+- *X11-unix* - maps the *docker container*'s to the *docker host*'s X11 driver. Normally set to  
+
+    -v /tmp/.X11-unix:/tmp/.X11-unix  
+
+- *docker.xauth* - maps the docker container's to the docker host's xauth file.  Normally set to  
+
+    -v /tmp/.docker.xauth:/tmp/.docker.xauth  
+
+- *.Xauthority* - maps the  docker container's .Xauthority file to the docker host's .Xauthority file.  Normally set to  
+
+    -v ${HOME}/.Xauthority:${HOME}/.Xauthority  
+
+- *localtime* - (optional) maps the docker container localtime file to the docker host's localtime file.  Normally set to 
+
+    -v /etc/localtime:/etc/localtime:ro
+
+______
 ### Creating a container
+
 
     docker run -it \
                -e DISPLAY=unix${DISPLAY} \
@@ -33,9 +60,11 @@ ______
                -v /tmp/.docker.xauth:/tmp/.docker.xauth \
                -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
                -v /etc/localtime:/etc/localtime:ro \
-               --name=gui \
                --rm \
+               --name=gui \
            debian-base-gui:9.2 /bin/bash  
+
+
 
 ### locale
 The following locale is automatically created in the image:
