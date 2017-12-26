@@ -26,6 +26,7 @@ Among the additional packages are
 
 ______
 ### Creating a container
+The following command will create a docker container named "*gui*" and start a console version of *bash*:
 
     docker run -it \
                -e DISPLAY=unix${DISPLAY} \
@@ -40,29 +41,34 @@ ______
 ______
 ### Docker RUN options
 
-The following settings are (the minimum) required docker RUN options for creating a working gui container:
+The following settings are (the minimum) required docker RUN options for all containers created using, or deriving *FROM*, the *EarthWalkSoftware/debian-base-gui* docker image:
 
 #### Environment variables
 
-- *DISPLAY* - Used to set the docker host's display to use. Normally, set to the default host display  
+- *DISPLAY*  
+Used to set the docker host's display to use. Normally, set to the default host display  
 
     -e DISPLAY=unix${DISPLAY}
 
 #### Volumes
 
-- *X11-unix* - maps the *docker container*'s to the *docker host*'s X11 driver. Normally set to  
+- *X11-unix*  
+Maps the *docker container*'s to the *docker host*'s X11 driver. Normally set to  
 
     -v /tmp/.X11-unix:/tmp/.X11-unix  
 
-- *docker.xauth* - maps the docker container's to the docker host's xauth file.  Normally set to  
+- *docker.xauth*  
+Maps the docker container's to the docker host's xauth file.  Normally set to  
 
     -v /tmp/.docker.xauth:/tmp/.docker.xauth  
 
-- *.Xauthority* - maps the  docker container's .Xauthority file to the docker host's .Xauthority file.  Normally set to  
+- *.Xauthority*  
+Maps the  docker container's .Xauthority file to the docker host's .Xauthority file.  Normally set to  
 
     -v ${HOME}/.Xauthority:${HOME}/.Xauthority  
 
-- *localtime* - (optional) maps the docker container localtime file to the docker host's localtime file.  Normally set to 
+- *localtime*  
+(OPTIONAL) Maps the docker container localtime file to the docker host's localtime file.  Normally set to 
 
     -v /etc/localtime:/etc/localtime:ro
 
