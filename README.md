@@ -1,7 +1,7 @@
 ## debian-base-gui
-*EarthWalkSoftware/debian-base-gui* builds upon *EarthWalkSoftware/debian-base* to include basic video/gui packages and framework setup.  
+*earthwalksoftware/debian-base-gui* builds upon *earthwalksoftware/debian-base* to include basic graphical dialog packages and framework setup.  
 
-A docker image of *EarthWalkSoftware/debian-base-gui* is available from *EarthWalkSoftware* at *Docker Hub*:
+A docker image for *earthwalksoftware/debian-base-gui* is available from *EarthWalkSoftware* at *Docker Hub*:
 
   https://hub.docker.com/r/earthwalksoftware/debian-base-gui/
 
@@ -41,7 +41,7 @@ The following command will create a docker container named *gui* and start a con
 ______
 ### Docker RUN options
 
-The following settings are (the minimum) required docker RUN options for all containers created using, or deriving *FROM*, the *EarthWalkSoftware/debian-base-gui* docker image:
+The following settings are (the minimum) required docker RUN options for all containers created using, or deriving *FROM*, the *earthwalksoftware/debian-base-gui* docker image:
 
 #### Environment variables
 
@@ -70,15 +70,15 @@ Maps the  docker container's .Xauthority file to the docker host's .Xauthority f
 ______
 ## Simple tests
 
-### Test 1
+#### Test 1
 Copy the docker command above (*Creating a container*) and paste it into a docker host command line to create a temporary docker named *gui*.  At the *bash* prompt (#), enter the following command:
 
-    apt install mousepad
-    /usr/bin/mousepad
+    apt install mousepad  
+    /usr/bin/mousepad  
 
 A graphical dialog should appear containing the *mousepad* editor main window.  Exit the *mousepad* program, then exit the container (*exit* 2 times).
 
-### Test 2
+#### Test 2
 Add a new volume to the command above, mapping a local folder container text documents (e.g. *$HOME/Documents*) to an arbitrary folder in the container (e.g. - */documents*):
 
     -v ${HOME}/Documents:/documents
@@ -87,12 +87,34 @@ Perform the steps in *Test 1* to open the mousepad application.  Using the mouse
 
 ______
 ### locale
-The following locale is automatically created in the image:
+The following locale is automatically created in the image:  
 
     locale-gen en_US
-    update-locale LANG=C.UTF-8 LC_MESSAGES=POSIX  
-  
-This setting may be changed in the Dockerfile (using the RUN command) when building a new container from the *EarthWalkSoftware/debian-base-gui* image, 
+    update-locale LANG=C.UTF-8 LC_MESSAGES=POSIX   
+    
+This setting may be changed in the Dockerfile (using the RUN command) when building a new container from the *earthwalksoftware/debian-base-gui* image, 
+
+------
+### The name's too long
+This can be resolved in 3 steps:
+
+- Pull the image down to the local docker host:  
+
+    docker pull earthwalksoftware/debian-base-gui:latest  
+
+- Tag the new image with a shorter name (e.g. - *debian-base-gui:latest*):  
+
+    docker tag earthwalksoftware/debian-base-gui:latest debian-base-gui:latest  
+
+- Remove the original image link:  
+
+    docker rmi earthwalksoftware/debian-base-gui:latest  
+
+- View docker images  
+
+    docker images  
+
+The *debian-base-gui:latest* image is now located on the local docker host.
 
 ------
 ### Licensed by Academic Free License v 3.0
