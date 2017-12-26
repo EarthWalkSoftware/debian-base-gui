@@ -36,7 +36,7 @@ The following command will create a docker container named *gui* and start a con
                -v /etc/localtime:/etc/localtime:ro \
                --rm \
                --name=gui \
-           debian-base-gui:9.2 /bin/bash  
+           earthwalksoftware/debian-base-gui:9.2 /bin/bash  
 
 ______
 ### Docker RUN options
