@@ -25,7 +25,22 @@ Among the additional packages are
 - *xz-utils*
 
 ______
+### Creating a container
+
+    docker run -it \
+               -e DISPLAY=unix${DISPLAY} \
+               -v /tmp/.X11-unix:/tmp/.X11-unix \
+               -v /tmp/.docker.xauth:/tmp/.docker.xauth \
+               -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
+               -v /etc/localtime:/etc/localtime:ro \
+               --rm \
+               --name=gui \
+           debian-base-gui:9.2 /bin/bash  
+
+______
 ### Docker RUN options
+
+The following settings are (the minimum) required docker RUN options for creating a working gui container:
 
 #### Environment variables
 
@@ -52,21 +67,6 @@ ______
     -v /etc/localtime:/etc/localtime:ro
 
 ______
-### Creating a container
-
-
-    docker run -it \
-               -e DISPLAY=unix${DISPLAY} \
-               -v /tmp/.X11-unix:/tmp/.X11-unix \
-               -v /tmp/.docker.xauth:/tmp/.docker.xauth \
-               -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
-               -v /etc/localtime:/etc/localtime:ro \
-               --rm \
-               --name=gui \
-           debian-base-gui:9.2 /bin/bash  
-
-
-
 ### locale
 The following locale is automatically created in the image:
 
