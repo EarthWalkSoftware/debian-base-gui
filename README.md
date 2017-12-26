@@ -29,7 +29,8 @@ ______
 
 #### Environment variables
 
-- *DISPLAY* - Used to set the system display to use. Normally, set to
+- *DISPLAY* - Used to set the docker host's display to use. Normally, set to the default host display  
+
     -e DISPLAY=unix${DISPLAY}
 
 #### Volumes
