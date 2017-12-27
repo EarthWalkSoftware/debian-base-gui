@@ -100,4 +100,4 @@ This setting may be changed in the Dockerfile (using the RUN command) when build
 Read the license at https://github.com/EarthWalkSoftware/docker-alpine-htop/wiki/License
 ____
 
-2017-12-26. Jay Wheeler @ EarthWalkSoftware
+*2017-12-26. Jay Wheeler @ EarthWalkSoftware*
