@@ -1,5 +1,5 @@
 ## debian-base-gui
-*EarthWalkSoftware/debian-base-gui* builds upon *EarthWalkSoftware/debian-base* to include basic graphical dialog packages and framework setup.  
+*EarthWalkSoftware/debian-base-gui* builds upon *EarthWalkSoftware/debian-base* to include basic X11 client graphics packages to leverage the docker host's display.  
 
 A docker image for *EarthWalkSoftware/debian-base-gui* is available from *EarthWalkSoftware* at *Docker Hub*:
 
