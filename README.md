@@ -131,7 +131,7 @@ Alternatively, a more robust and secure solution, such as *x11docker* and *x11do
 ------
 ### Licensed by Academic Free License v 3.0
 
-Read the license at https://github.com/EarthWalkSoftware/docker-alpine-htop/wiki/License
+Read the license at https://github.com/EarthWalkSoftware/debian-base-gui/wiki/License
 ____
 
 *2017-12-26. Jay Wheeler @ EarthWalkSoftware*
