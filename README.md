@@ -102,9 +102,9 @@ This can be resolved in 3 steps:
 
     docker pull earthwalksoftware/debian-base-gui:latest  
 
-- Tag the new image with a shorter name (e.g. - *debian-base-gui:0*):  
+- Tag the new image with a shorter name (e.g. - *debian-base-gui:1.0.0*):  
 
-    docker tag earthwalksoftware/debian-base-gui:latest debian-base-gui:0  
+    docker tag earthwalksoftware/debian-base-gui:latest debian-base-gui:1.0.0  
 
 - Remove the original image link:  
 
@@ -114,7 +114,7 @@ This can be resolved in 3 steps:
 
     docker images  
 
-The *debian-base-gui:0* image is now located on the local docker host.
+The *debian-base-gui:1.0.0* image is now located on the local docker host.
 
 ------
 ### Licensed by Academic Free License v 3.0
