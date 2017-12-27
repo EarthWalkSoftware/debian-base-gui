@@ -1,7 +1,7 @@
 ## debian-base-gui
-*earthwalksoftware/debian-base-gui* builds upon *earthwalksoftware/debian-base* to include basic graphical dialog packages and framework setup.  
+*EarthWalkSoftware/debian-base-gui* builds upon *EarthWalkSoftware/debian-base* to include basic graphical dialog packages and framework setup.  
 
-A docker image for *earthwalksoftware/debian-base-gui* is available from *EarthWalkSoftware* at *Docker Hub*:
+A docker image for *EarthWalkSoftware/debian-base-gui* is available from *EarthWalkSoftware* at *Docker Hub*:
 
   https://hub.docker.com/r/earthwalksoftware/debian-base-gui/
 
@@ -93,28 +93,6 @@ The following locale is automatically created in the image:
     update-locale LANG=C.UTF-8 LC_MESSAGES=POSIX   
     
 This setting may be changed in the Dockerfile (using the RUN command) when building a new container from the *earthwalksoftware/debian-base-gui* image, 
-
-------
-### The name's too long
-This can be resolved in 3 steps:
-
-- Pull the image down to the local docker host:  
-
-    docker pull earthwalksoftware/debian-base-gui:latest  
-
-- Tag the new image with a shorter name (e.g. - *debian-base-gui:latest*):  
-
-    docker tag earthwalksoftware/debian-base-gui:latest debian-base-gui:latest  
-
-- Remove the original image link:  
-
-    docker rmi earthwalksoftware/debian-base-gui:latest  
-
-- View docker images  
-
-    docker images  
-
-The *debian-base-gui:latest* image is now located on the local docker host.
 
 ------
 ### Licensed by Academic Free License v 3.0
