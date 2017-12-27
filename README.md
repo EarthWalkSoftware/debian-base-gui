@@ -118,7 +118,7 @@ The *debian-base-gui:1.0.0* image is now located on the local docker host.
 
 ------
 ### Security concerns
-This implementation does not do much to *harden* the docker host-container interface.  For a more secure solution X11Docker and X11Docker-GUI are worth investigating:
+This implementation does not do much to *harden* the docker host-container interface.  It is fairly light-weight and intended for use on a secure LAN or vLAN.  When using the X11 server over a WAN (e.g., Internet), a more robust and secure  solution such as *x11docker* and *x11docker-gui* are worth investigating:
 
   https://github.com/mviereck/x11docker  
 
