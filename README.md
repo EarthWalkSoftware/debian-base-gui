@@ -95,7 +95,7 @@ The following locale is automatically created in the image:
 This setting may be changed in the Dockerfile (using the RUN command) when building a new container from the *earthwalksoftware/debian-base-gui* image, 
 
 ------
-### The name's too long
+### The name's too long! (or, how to localize a docker image from a repository)
 This can be resolved in 3 steps:
 
 - Pull the image down to the local docker host:  
