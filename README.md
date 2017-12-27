@@ -36,7 +36,7 @@ The following command will create a docker container named *gui* and start a con
                -v /etc/localtime:/etc/localtime:ro \
                --rm \
                --name=gui \
-           earthwalksoftware/debian-base-gui:9.2 /bin/bash  
+           earthwalksoftware/debian-base-gui /bin/bash  
 
 ______
 ### Docker RUN options
@@ -93,6 +93,28 @@ The following locale is automatically created in the image:
     update-locale LANG=C.UTF-8 LC_MESSAGES=POSIX   
     
 This setting may be changed in the Dockerfile (using the RUN command) when building a new container from the *earthwalksoftware/debian-base-gui* image, 
+
+------
+### The name's too long
+This can be resolved in 3 steps:
+
+- Pull the image down to the local docker host:  
+
+    docker pull earthwalksoftware/debian-base-gui:latest  
+
+- Tag the new image with a shorter name (e.g. - *debian-base-gui:0*):  
+
+    docker tag earthwalksoftware/debian-base-gui:latest debian-base-gui:0  
+
+- Remove the original image link:  
+
+    docker rmi earthwalksoftware/debian-base-gui:latest  
+
+- View docker images  
+
+    docker images  
+
+The *debian-base-gui:0* image is now located on the local docker host.
 
 ------
 ### Licensed by Academic Free License v 3.0
