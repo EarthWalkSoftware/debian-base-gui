@@ -117,6 +117,12 @@ This can be resolved in 3 steps:
 The *debian-base-gui:1.0.0* image is now located on the local docker host.
 
 ------
+### Security concerns
+This implementation does not do much to *harden* the docker host-container interface.  For a more secure solution X11Docker and X11Docker-GUI are worth investigating:
+
+  https://github.com/mviereck/x11docker  
+
+------
 ### Licensed by Academic Free License v 3.0
 
 Read the license at https://github.com/EarthWalkSoftware/docker-alpine-htop/wiki/License
