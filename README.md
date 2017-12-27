@@ -106,7 +106,7 @@ This can be resolved in 3 steps:
 
     docker tag earthwalksoftware/debian-base-gui:latest debian-base-gui:1.0.0  
 
-- Remove the original image link:  
+- Remove the original image tag:  
 
     docker rmi earthwalksoftware/debian-base-gui:latest  
 
