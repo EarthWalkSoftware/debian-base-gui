@@ -120,7 +120,7 @@ The *debian-base-gui:1.0.0* image is now located on the local docker host.
 ### Security concerns
 This implementation does not do much to *harden* the docker host-container interface.  It is fairly light-weight and intended for use on secure internal and/or external LANs and/or vLANs.  
 
-When using the X11 server over a WAN (e.g., Internet), additional steps to isolate the docker container from the docker host must be taken.
+When using the X11 server over a WAN (e.g., Internet), additional steps to isolate the docker container from the docker host must be taken.  Docker offers many RUN-time options for controlling the host-container interface, and can be explored at the Docker Docs site:
 
   https://docs.docker.com/engine/reference/run/#operator-exclusive-options
 
