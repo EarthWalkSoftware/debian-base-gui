@@ -71,7 +71,7 @@ ______
 ## Simple tests
 
 #### Test 1
-Copy the docker command above (*Creating a container*) and paste it into a docker host command line to create a temporary docker named *gui*.  At the *bash* prompt (#), enter the following command:
+Copy the docker command above (*Creating a container*) and paste it into a docker host command line to create a temporary docker container named *gui*.  At the *bash* prompt (#), enter the following command:
 
     apt install mousepad  
     /usr/bin/mousepad  
@@ -79,7 +79,7 @@ Copy the docker command above (*Creating a container*) and paste it into a docke
 A graphical dialog should appear containing the *mousepad* editor main window.  Exit the *mousepad* program, then exit the container (*exit* 2 times).
 
 #### Test 2
-Add a new volume to the command above, mapping a local folder container text documents (e.g. *$HOME/Documents*) to an arbitrary folder in the container (e.g. - */documents*):
+Add a new volume to the command above, mapping a local folder container text documents (e.g., *$HOME/Documents*) to an arbitrary folder in the container (e.g., */documents*):
 
     -v ${HOME}/Documents:/documents
 
