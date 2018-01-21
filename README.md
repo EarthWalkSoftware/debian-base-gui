@@ -6,6 +6,11 @@ A docker image for *EarthWalkSoftware/debian-base-gui* is available from *EarthW
   https://hub.docker.com/r/earthwalksoftware/debian-base-gui/
 
 ______
+### Docker Tags
+
+**docker pull** will pull the **latest** image by default, but you can specify other versions (or tags) in the Docker **Tags** link, above.  For a description of how the debian-base-gui tags work, go to the [Docker Tags](https://github.com/EarthWalkSoftware/debian-base-gui/wiki/Docker-Tags) page of the [EarthWalk Software debian-base-gui Wiki](https://github.com/EarthWalkSoftware/debian-base-gui/wiki).
+
+______
 ### Packages
 Among the additional packages are 
 - *dbus-x11*
