@@ -2,13 +2,13 @@
 # =========================================================================
 #
 #	Dockerfile
-#	  Dockerfile for debian-base-gui (docker x11 utilities) 
-#		in a Debian 9.2 (Stretch) docker container.
+#	  Dockerfile for debian-base-gui (docker gui utilities) 
+#		in a Debian 9.3 (Stretch) docker container.
 #
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 1.0.0
+# @version 2.0.0
 # @copyright © 2017. EarthWalk Software.
 # @license Licensed under the Academic Free License version 3.0
 # @package debian-base-gui
@@ -26,7 +26,7 @@
 #
 # =========================================================================
 # =========================================================================
-FROM earthwalksoftware/debian-base:9.2
+FROM earthwalksoftware/debian-base:9.3
 MAINTAINER Jay Wheeler <EarthWalkSoftware@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
@@ -39,6 +39,7 @@ RUN apt-get -y update \
             file \
             fonts-dejavu \
             fonts-liberation \
+            fonts-opensymbol \
             hicolor-icon-theme \
             libglib2.0 \
 	        libx11-xcb-dev \
